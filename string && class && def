@@ -1,0 +1,195 @@
+元组是只读的列表，，，方法和列表相同
+
+列表，元组，字典三者的方法相同。
+
+
+字符串运算符：
++   连接
+*   字符串重复
+[]     索引获取字符
+[:]    截取部分字符串
+in     成员判断
+not in 成员判断
+\n    换行符
+\n\n  两次换行
+r/R   字符串直接打印 原始输出  无转义
+
+格式化：
+% 占位符   遇到一个% 就是一个占位符
+%s 字符串占位符  单词或字母
+%d 整型占位符  整数
+
+字符串的各种函数：
+mystr = 'hello world itcast and itcastcpp and itcast'
+
+mystr.    得出各种方法
+.find()      查找
+.count()     统计
+.replace()   替换
+.split()     分割
+.lstrip()	 切割左空格
+.rstrip()	 切割右空格
+.endswith()  以什么字符结尾
+.startswith() 以什么字符开头
+
+help (mystr.find)
+mystr.find('xxxx',0,len(mystr))
+len(mystr)
+
+mystr.count('xxxxx')  统计出现次数
+mystr.replace()  替换字符串
+mystr = mystr.replace('old_str','new_str')
+mystr
+
+mystr.split()  字符串切片
+mylist = mystr.split(' ')
+for key in mylist:
+    print key
+
+mylist.
+mylist.sort()  安字典排序了
+mylist   查看
+mylist.count()
+
+
+help(mystr.replace)
+
+以 Sublime text 的Markdown格式写笔记  可以直接生产 html文件，，
+
+.isalpha() 判断是否有数字
+.isdigit() 判断是否是整数
+.partition('xxx') 分割
+.rpartition('xxx')  从最后处分割
+.splitlines()  以行为单位分割
+
+
+mystr = 'hello world itcast and itcastcpp and itcast'
+
+mystr.partition('world')
+mystr.rpartition('itcast')
+
+
+vi fun
+#!/usr/bin/python
+#
+def printname(str):
+    "print you name by str"
+    print str
+    return
+
+
+ipython:
+import fun
+fun.printname('c++')
+c++
+
+ help(fun)
+Help on module fun:
+
+NAME
+    fun
+
+FILE
+    /root/python_script/fun.py
+
+FUNCTIONS
+    printname(str)
+        print you name bu str
+
+
+
+按引用传递参数：
+
+vi test 
+
+#!/usr/bin/python
+#coding=utf-8
+
+def changeme( mylist ):
+    "修改传入的列表"
+    mylist.append([1,2,3,4]);
+    print "函数内取值： " ,mylist
+    return
+
+mylist = [20,30,40];
+changeme(mylist);
+print "函数外取值： ",mylist
+
+
+ipython
+import test
+mylist=[100,200,500]
+test.changeme(mylist)
+mylist
+if(mylist)
+
+
+
+参数：
+必备参数
+命名参数
+缺省参数
+不定长参数
+
+匿名函数：lambda
+sum = lambda arg1,arg2: arg1 + arg2;
+sum(10,20)
+type(sum)
+
+return语句：
+#!/usr/bin/python
+#coding=utf-8
+def arglist():
+    print "call arglist"
+    return 1,2,3,4,5,6,7
+
+ ipython
+ import test
+ test.arglist()
+
+ 或者：
+ res=test.arglist()
+ print res
+ res[1]
+ res[0:3]
+ res[3:]
+
+
+变量的作用域：
+全局变量
+局部变量
+
+闭包：
+
+装饰器函数：
+
+
+类：属性 + 方法（行为、函数）
+
+对象：实例化一个对象.两个数据成员（类变量+实例变量）
+	  从一个类实例化出来的具体对象
+
+方法：类中定义的函数
+数据成员：
+方法重载：
+实例变量：
+类变量：
+继承：派生类(derived class)、继承类（base class）
+
+类：继承
+
+
+创建类：
+
+class ClassNmae:
+    '类的帮助信息'           #类文档的字符串
+     类变量：                #类体 class_suite  由类成员，方法，数据属性组成
+     def __init__(self,paramers,paramers1...):
+     def 函数（self,...）
+     ......
+
+attr：属性
+setattr
+getattr
+
+from test import Parent,Child    #意思是 从test 这个模块文件中导入 父类 和子类方法

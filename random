@@ -1,0 +1,51 @@
+生成随机数：
+
+ #!/usr/bin/python
+#coding:utf-8
+
+import string,random
+
+#激活码中的字符和数字
+field = string.letters + string.digits
+
+#获得四个字母和数字的随机组合
+def getRandom():
+    return "".join(random.sample(field,4))
+
+#生成的每个激活码中有几组
+def concatenate(group):
+    return "-".join([getRandom() for i in range(group)])
+
+#生成n组激活码
+def generate(n):
+    return [concatenate(4) for i in range(n)]
+
+if __name__ == '__main__':
+    print generate(200)
+
+
+
+给图片加数字：
+
+#!/usr/bin/python
+#coding:utf-8
+#image add number
+
+myPath = "./"
+fontPath = "./"
+inputFile = "2017.jpg"
+outputFile = "output.jpg"
+
+import Image,ImageFont,ImageDraw
+
+#打开图片
+im = Image.open(myPath + inputFile)
+draw = ImageDraw.Draw(im)
+
+#根据图片大小确定字体大小
+fontsize = min(im.size)/4
+
+#加文字
+font = ImageFont.truetype(fontPath + 'KhmerOS.ttf',fontsize)
+draw.text((im.size[0]-fontsize,0),'5',font = font,fill = (256,0,0))
+im.save(myPath + outputFile,"jpeg")

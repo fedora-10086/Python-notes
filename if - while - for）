@@ -1,0 +1,252 @@
+ url = 'www.baidu.com'
+while url:
+    print url
+    url = url[1:]
+   
+   
+url = 'www.baidu.com'
+while url:
+    print url
+    url = url[:-1]
+else:
+    print "11111"
+   
+   
+url = 'www.baidu.com';x = 0
+while url:
+    print url
+    url = url[:-1]
+    x += 1
+    if x > 7:
+        break
+else:
+    print "over..."
+   
+   
+遍历100
+x = 0 ;y = 100
+while x < y :
+    print x
+    x += 1
+   
+遍历偶数
+x = 0 ;y = 100
+while x < y :
+    print x，
+    x += 2
+   
+
+
+    1、逐一显示指定列表中的所以元素
+1）    L1 = [1,2,3,4,5,6,7,8,9]
+    count = 0
+    while count < len(L1):
+        print L1[count]
+        count += 1
+                
+2）    L1 = [1,2,3,4,5]   
+    while L1:
+        print L1[0]
+        L1.pop(0)
+       
+3）    //逆序显示       
+    L1 = [1,2,3,4,5]   
+    while L1:
+        print L1[-1]
+        L1.pop()       
+       
+4） url = www.baidu.com
+    for x in url:
+        print x
+       
+
+   
+   
+    2、求100以内偶数之和
+    l1 = []
+    x = 0
+    while x < 100:
+        l1.append(x)
+        x += 2
+    print sum(l1)
+   
+    求100以内奇数之和
+    d1 = []
+    x = 1
+    while x < 100:
+        d1.append(x)
+        x += 2
+    print sum(d1)
+   
+   
+    3、逐一显示指定字典的所有键，并于显示结束后说明总键数；
+    d1 = {'x':1,'y':23,'z':78}
+    keylist = d1.keys()
+    while keylist:
+        print keylist[0]
+        keylist.pop(0)
+    else:
+        print len(d1)
+       
+    4、创建一个包含100 以内所有奇数的列表：
+    l1 = []
+    x = 1
+    while x < 100:
+        l1.append(x)
+        x += 2
+    print l1
+       
+    5、逆序逐一显示一个列表的所有元素
+    l1 = [1,2,3,4,5,33,45,65]   
+    while l1:
+        print l1[-1]
+        l1.pop()
+       
+       
+    6、列表l1 = [0,1,2,3,4,5,6],列表 l2 = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+        以第一个列表中的元素为键，以第二个列表中的元素为值生成字典d1;
+       
+        d1 = {}
+        count = 0
+        l1 = [0,1,2,3,4,5,6]
+        l2 = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+        if len(l1) == len(l2):
+            while count < len(l1):
+                d1[l1[count] = l2[count]
+                    count += 1
+       
+        print d1
+       
+               
+    while True:        //死循环
+   
+   
+for循环:
+    for expression1 in iterable:            //iterable 可迭代对象
+        for...suite
+    else:
+        else...suite
+       
+       
+    求1到100 之间整数的和：
+    sum = 0
+    for i in range(1,101):
+        sum += i
+    print sum
+   
+   
+    sum = 0
+    for i in xrange(1,101):
+        sum += i
+    print sum
+   
+   
+    for循环比while循环执行速度快；
+    for循环中的两个内置函数：
+        range：一次性的返回连续的整数列表
+        xrangge 一次产生一个数据元素，比rangge更节省空间
+       
+        zip 返回并行的元素元组的列表，用于for循环遍历数个序列
+            并行迭代：
+            生成动态字典
+           
+           
+            for循环并行迭代：
+                l1 = [1,2,3,4,5,6,7]
+                l2 = ['a','b','c','d','e','f','g']
+                zip(l1,l2)
+                Out[3]: [(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd'), (5, 'e'), (6, 'f'), (7, 'g')]
+               
+            生成动态字典：
+                keys = [1,2,3,4,5,6,7]
+                values = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+                d1 = {}
+                for (k,v) in zip(keys,values):
+                    d1[k] = v
+                print d1
+               
+            {1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu', 5: 'Fri', 6: 'Sat', 7: 'Sun'}
+               
+               
+
+    1、动态语言
+        sys.getrefcount()
+        增加对象的引用计数场景：
+            对象创建时
+            将对象添加进容器时：类似list.append()
+            当对象被当做参数传递给函数时
+            s1=s2=s3='abc'
+            为对象创建另外变量名
+           
+        减少引用计数：
+            引用此对象的 某变量名被显式销毁：dex x
+            给引用此对象的某变量名重新赋值
+            从容器中移除对象时，类似list.pop()
+            容器本身被销毁
+           
+    2、控制流语句
+        if boolean_expression:
+            suite...
+        elif boolean_expression:
+            suite...
+        else
+            ...
+           
+        while boolean_expression:
+            whil_suite
+            if boolean_expression2:continue
+            if boolean_expression3:break
+        else:
+            else_suite
+               
+        for expression in obj:
+            for_suite
+            if boolean_expression2:continue
+            if boolean_expression3:break
+        else:
+            else_suite
+           
+           
+        while True:    //死循环
+       
+        test = []
+        while True:
+            x = raw_input('please enter:')
+            if x == 'q' or x == 'quit':
+                break
+            else:
+                test.append(x)
+               
+
+1、逐一分开显示指定字典d1中的所有元素，类似如下：
+k1 v1
+k2 v2
+...
+
+d1 = {'x':123,'y':321,'z':741}
+for (k,v) in d1.items():
+    print k,v
+   
+
+2、逐一显示列表l1 = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'] 中的索引为奇数的元素；
+
+for i in range(1,len(l1),2):
+    print l1[i]
+
+           
+3、将列表 l1 = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'] 但不属于 l2 = ['Sun','Mon','Tue','Sat']的 所有元素定义为一个新列表l3;
+
+l3 = []
+for i in l1:
+    if i not in l2:
+        l3.append(i)
+print l3
+       
+
+
+4、已知列表namelist=['stu1','stu2','stu3','stu4','stu5','stu6','stu7'],删除列表removelist = ['stu3','stu7','stu9']:请将属于removelist 列表中的每个元素从namelist中移除（属于removelist，但不属于namelist的忽略即可）
+           
+for i in removelist:
+    if i in namelist:
+        namelist.remove(i)
+print namelist 

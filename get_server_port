@@ -1,0 +1,56 @@
+#coding=utf-8
+#!/usr/bin/python
+import string
+import commands
+ 
+##########返回命令执行结果
+def getComStr(comand):
+    try:
+        stat, proStr = commands.getstatusoutput(comand)
+    except:
+        print "command %s execute failed, exit" % comand
+    #将字符串转化成列表
+    #proList = proStr.split("\n")
+    return proStr
+ 
+##########获取系统服务名称和监听端口
+def filterList():
+    tmpStr = getComStr("netstat -tpln")
+    tmpList = tmpStr.split("\n")
+    del tmpList[0:2]
+    newList = []
+    for i in tmpList:
+        val = i.split()
+        del val[0:3]
+        del val[1:3]
+        #提取端口号
+        valTmp = val[0].split(":")
+        val[0] = valTmp[1]
+        #提取服务名称
+        valTmp = val[1].split("/")
+        val[1] = valTmp[-1]
+        #用空格将列表连接成字符串,便于PHP或Shell处理
+        val = ' '.join(val)
+        #追加值到新的列表
+        if ' -' not in val:
+            newList.append(val)
+    return newList
+ 
+##########通过系统进程来获取其他的服务pass
+#def filterListOther():
+ 
+def main():
+    netInfo = filterList()
+    #追加列说明
+    netInfo.append(netInfo[0])
+    netInfo[0] = 'appPort appName'
+    #去重并保持原来的索引顺序
+    appInfo = list(set(netInfo))
+    appInfo.sort(key=netInfo.index)
+     
+    for i in appInfo:
+        print i
+    #print appInfo
+ 
+if __name__ == "__main__":
+    main()
